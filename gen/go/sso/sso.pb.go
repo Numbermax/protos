@@ -21,6 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// The RegisterRequest message is used to register a new user.
 type RegisterRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
@@ -73,6 +74,7 @@ func (x *RegisterRequest) GetPassword() string {
 	return ""
 }
 
+// The RegisterResponse message is returned after a successful registration.
 type RegisterResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -117,6 +119,7 @@ func (x *RegisterResponse) GetUserId() int64 {
 	return 0
 }
 
+// The LoginRequest message is used to log in a user.
 type LoginRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
@@ -177,6 +180,7 @@ func (x *LoginRequest) GetAppId() int32 {
 	return 0
 }
 
+// The LoginResponse message is returned after a successful login.
 type LoginResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
@@ -221,6 +225,7 @@ func (x *LoginResponse) GetToken() string {
 	return ""
 }
 
+// The UserInfo message contains information about a user.
 type IsAdminRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -265,6 +270,7 @@ func (x *IsAdminRequest) GetUserId() int64 {
 	return 0
 }
 
+// The UserInfo message contains information about a user.
 type IsAdminResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	IsAdmin       bool                   `protobuf:"varint,1,opt,name=is_admin,json=isAdmin,proto3" json:"is_admin,omitempty"`
