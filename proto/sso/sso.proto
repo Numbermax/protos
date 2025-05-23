@@ -10,29 +10,35 @@ service Auth{
     rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
 }
 
+// The RegisterRequest message is used to register a new user.
 message RegisterRequest {
     string email = 1;
     string password = 2;
 }
 
+// The RegisterResponse message is returned after a successful registration.
 message RegisterResponse {
     int64 user_id = 1;
 }
 
+// The LoginRequest message is used to log in a user.
 message LoginRequest {
     string email = 1;
     string password = 2;
     int32 app_id = 3;
 }
 
+// The LoginResponse message is returned after a successful login.
 message LoginResponse {
     string token = 1;
 }
 
+// The UserInfo message contains information about a user.
 message IsAdminRequest {
     int64 user_id = 1;
 }
 
+// The UserInfo message contains information about a user.
 message IsAdminResponse {
     bool is_admin = 1;
 }
